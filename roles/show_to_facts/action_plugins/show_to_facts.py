@@ -71,9 +71,18 @@ class ActionModule(ActionBase): #pylint: disable=R0903
             command_map[parser['resource']][parser['network_os']].append(parser['commands'])
         return command_map
 
+    @staticmethod
+    def _validate_args(args):
+        provided = set(list(args.keys()))
+        valid_args = set(['resources', 'update_facts', 'fact_key', '_return_command_map'])
+        extras = provided - valid_args
+        if extras:
+            raise AnsibleError("The following arguments are not supported: %s" % ','.join(extras))
 
     def run(self, tmp=None, task_vars=None):
         self.display.verbosity = self._play_context.verbosity
+
+        self._validate_args(self._task.args)
         result = super(ActionModule, self).run(tmp, task_vars)
         if '_return_command_map' in self._task.args and self._task.args['_return_command_map']:
             result.update({

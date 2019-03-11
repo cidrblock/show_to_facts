@@ -1,1 +1,2 @@
 fact_key: net_operational
+update_facts: True
