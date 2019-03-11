@@ -1,0 +1,33 @@
+Capability codes:
+  (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+  (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
+Device ID            Local Intf      Hold-time  Capability  Port ID  
+
+Chassis id: 5254.00c5.c4ae
+Port id: Management1
+Local Port id: mgmt0
+Port Description: null
+System Name: eos104
+System Description: Arista Networks EOS version 4.21.1.1F running on an Arista Networks vEOS
+Time remaining: 109 seconds
+System Capabilities: B, R
+Enabled Capabilities: B
+Management Address: 192.168.101.13
+Management Address IPV6: not advertised
+Vlan ID: 0
+
+
+Chassis id: 5254.00c5.c4ae
+Port id: Ethernet1
+Local Port id: Eth1/1
+Port Description: null
+System Name: eos104
+System Description: Arista Networks EOS version 4.21.1.1F running on an Arista Networks vEOS
+Time remaining: 109 seconds
+System Capabilities: B, R
+Enabled Capabilities: B
+Management Address: 192.168.101.13
+Management Address IPV6: not advertised
+Vlan ID: 1
+
+Total entries displayed: 2

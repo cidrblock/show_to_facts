@@ -1,0 +1,54 @@
+
+- name: Clear out previous output collection
+  set_fact:
+    outputs: []
+    ansible_network_os: "{{ network_os_name }}"
+
+- name: Ensure the command out files exist and are not empty
+  include: check_output_file.yml
+  with_list: "{{ commands }}"
+  loop_control:
+    loop_var: command
+
+- name: Build a list of the command output file contents
+  set_fact: 
+    outputs: "{{ outputs + [ lookup('file', test['path'] + '/' + item) ] }}"
+  with_list: "{{ commands }}"
+
+- name: "Load the expected from the file system {{ test['path'].split('/')[-4:]|join('/') }}//expected.yml"
+  include_vars:
+    file: "{{ test['path'] }}/expected.yml"
+    name: expected
+
+- name: Fail if the expected results are empty
+  fail:
+    msg: "Expected result file is empty: {{ test['path'] }}/expected.yml"
+  when: not expected
+
+- name: Run the module
+  show_to_facts:
+    resources:
+    - name: "{{ resource_name }}"
+      output: "{{ outputs }}"
+  register: test_results
+
+- name: Compare the test results to the expected
+  assert:
+    that: test_results['results'] == expected
+  ignore_errors: True
+  register: compare
+
+- name: "Print the expected results for {{ resource_name }}/{{ network_os_name }}"
+  debug:
+    msg: "{{ expected|to_nice_yaml }}"
+  when: compare.failed
+
+- name: "Print the test_results for {{ resource_name }}/{{ network_os_name }}"
+  debug:
+    msg: "{{ test_results['results']|to_nice_yaml }}"
+  when: compare.failed
+
+- name: Fail if the test results did not compare to the expected
+  fail:
+    msg: "Test results did not successfully compare to expected. (see above for output). Test path: {{ test['path'].split('/')[-4:]|join('/') }}"
+  when: compare.failed

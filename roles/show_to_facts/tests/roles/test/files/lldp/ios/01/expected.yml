@@ -1,0 +1,86 @@
+lldp:
+    neighbors:
+        details:
+            eos101:
+                description: ''
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: Management1
+                name: eos101
+                os: ''
+            eos102:
+                description: Arista Networks EOS version 4.21.1.1F running on an Arista
+                    Networks vEOS
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: Management1
+                name: eos102
+                os: eos
+            eos104:
+                description: ''
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: Management1
+                name: eos104
+                os: ''
+            ios101:
+                description: 'Cisco IOS Software, CSR1000V Software (X86_64_LINUX_IOSD-UNIVERSALK9-M),
+                    Version 15.4(2)S, RELEASE SOFTWARE (fc2)
+
+                    Technical Support: http://www.cisco.com/techsupport
+
+                    Copyright (c) 1986-2014 by Cisco Systems, Inc.
+
+                    Compiled Wed 26-Mar-14 21:09 by mcpre'
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: GigabitEthernet1
+                name: ios101
+                os: ios
+            nxos101:
+                description: 'Cisco Nexus Operating System (NX-OS) Software 9.2(2)
+
+                    TAC support: http://www.cisco.com/tac
+
+                    Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.'
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: mgmt0
+                name: nxos101
+                os: nxos
+            nxos102:
+                description: 'Cisco Nexus Operating System (NX-OS) Software 9.2(2)
+
+                    TAC support: http://www.cisco.com/tac
+
+                    Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.'
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: mgmt0
+                name: nxos102
+                os: nxos
+            nxos103:
+                description: 'Cisco Nexus Operating System (NX-OS) Software 9.2(2)
+
+                    TAC support: http://www.cisco.com/tac
+
+                    Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.'
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: mgmt0
+                name: nxos103
+                os: nxos
+            nxos104:
+                description: 'Cisco Nexus Operating System (NX-OS) Software 9.2(2)
+
+                    TAC support: http://www.cisco.com/tac
+
+                    Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.'
+                interfaces:
+                -   local: GigabitEthernet1
+                    neighbor: mgmt0
+                name: nxos104
+                os: nxos
+        summary:
+            total: 8
+            unique: 8

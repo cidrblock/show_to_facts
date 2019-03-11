@@ -1,0 +1,15 @@
+Capability codes:
+    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device
+    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other
+
+Device ID           Local Intf     Hold-time  Capability      Port ID
+nxos103             Gi1            120        B,R             mgmt0
+eos102              Gi1            120        B               Management1
+nxos101             Gi1            120        B,R             mgmt0
+eos101              Gi1            120        B               Management1
+ios101              Gi1            120        R               Gi1
+eos104              Gi1            120        B               Management1
+nxos102             Gi1            120        B,R             mgmt0
+nxos104             Gi1            120        B,R             mgmt0
+
+Total entries displayed: 9

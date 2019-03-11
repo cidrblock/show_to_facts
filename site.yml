@@ -1,0 +1,11 @@
+- hosts: eos:ios:nxos
+  gather_facts: False
+  roles:
+    - name: show_to_facts
+      vars:
+        resources:
+        - lldp
+        - interfaces
+    - name: report
+      vars:
+        data: "{{ net_operational }}"

@@ -1,0 +1,7 @@
+- name: "Include for each_os file for each os in resource: {{ resource['key'] }}"  
+  include: each_os.yml
+  with_dict: "{{ resource['value'] }}"
+  vars:
+    resource_name: "{{ resource['key'] }}"
+  loop_control: 
+    loop_var: network_os

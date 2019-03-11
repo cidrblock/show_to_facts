@@ -1,0 +1,27 @@
+lldp:
+    neighbors:
+        details:
+            eos103:
+                description: Arista Networks EOS version 4.21.1.1F running on an Arista
+                    Networks vEOS
+                interfaces:
+                -   local: Ethernet1
+                    neighbor: Ethernet1
+                -   local: Management1
+                    neighbor: Management1
+                name: eos103
+                os: eos
+            nxos102:
+                description: 'Cisco Nexus Operating System (NX-OS) Software 9.2(2)
+
+                    TAC support: http://www.cisco.com/tac
+
+                    Copyright (c) 2002-2018, Cisco Systems, Inc. All rights reserved.'
+                interfaces:
+                -   local: Ethernet1
+                    neighbor: Ethernet1/1
+                name: nxos102
+                os: nxos
+        summary:
+            total: 3
+            unique: 2

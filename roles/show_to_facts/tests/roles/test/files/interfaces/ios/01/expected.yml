@@ -1,0 +1,47 @@
+interfaces:
+    details:
+        GigabitEthernet1:
+            description: null
+            hardware: CSR vNIC
+            ipv4_address:
+                address: 192.168.101.18
+                netmask: 255.255.255.0
+                network: 192.168.101.0
+                prefix_length: '24'
+            name: GigabitEthernet1
+            state:
+                administrative: up
+                brief: up_up
+                operating: up
+        GigabitEthernet2:
+            description: null
+            hardware: CSR vNIC
+            ipv4_address: null
+            name: GigabitEthernet2
+            state:
+                administrative: down
+                brief: down_down
+                operating: down
+    summary:
+        state:
+            administrative:
+                down: 1
+                up: 1
+            down_down:
+                interfaces:
+                - GigabitEthernet2
+                total: 1
+            down_up:
+                interfaces: []
+                total: 0
+            operating:
+                down: 1
+                up: 1
+            up_down:
+                interfaces: []
+                total: 0
+            up_up:
+                interfaces:
+                - GigabitEthernet1
+                total: 1
+        total: 2

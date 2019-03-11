@@ -1,0 +1,9 @@
+- name: foo
+  show_to_facts:
+    _return_command_map: True
+  register: command_map
+
+- include: each_resource.yml
+  with_dict: "{{ command_map['command_map'] }}"
+  loop_control:
+    loop_var: resource

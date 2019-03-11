@@ -1,0 +1,38 @@
+all:
+  children:
+    eos:
+      hosts:
+        eos101:
+        eos102:
+        eos103:
+        eos104:
+        eos201:
+        eos202:
+        eos203:
+        eos204:
+      vars:
+        ansible_network_os: eos
+    ios:
+      hosts:
+        ios101:
+        ios102:
+        ios103:
+        ios104:
+        ios201:
+        ios202:
+        ios203:
+        ios204:
+      vars:
+        ansible_network_os: ios
+    nxos:
+      hosts:
+        nxos101:
+        nxos102:
+        nxos103:
+        nxos104:
+        nxos201:
+        nxos202:
+        nxos203:
+        nxos204:
+      vars:
+        ansible_network_os: nxos

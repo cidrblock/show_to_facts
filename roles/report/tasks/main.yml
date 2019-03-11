@@ -1,0 +1,16 @@
+- name: load the prettyprint.js
+  set_fact:
+    prettyprint: "{{ lookup('file', 'prettyprint.js') }}"
+  run_once: True
+
+- name: Creates reports directory
+  file:
+    path: "{{ report_dir|default('./reports') }}"
+    state: directory
+  run_once: True
+
+- name: save the html file
+  template:
+    src: report.html.j2
+    dest: "{{ report_dir|default('./reports') }}/{{ inventory_hostname }}.html"
+  connection: local    

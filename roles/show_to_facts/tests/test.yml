@@ -1,0 +1,8 @@
+- hosts: localhost
+  gather_facts: False
+  pre_tasks:
+  - include_role: 
+      name: show_to_facts
+      tasks_from: noop
+  roles:
+   - test

@@ -1,0 +1,16 @@
+ 
+- name: Check for '{{ test['path'].split('/')[-4:]|join('/') }}/{{ command }}'"
+  stat:
+    path: "{{ test['path'] }}/{{ command }}"
+  register: command_output_file
+  connection: local
+
+- name: Fail if '{{ test['path'].split('/')[-4:]|join('/') }}/{{ command }}' does not exist"
+  fail:
+    msg: "Command output file is missing: {{ test['path'] }}/{{ command }}"
+  when: not command_output_file.stat.exists
+
+- name: "Fail if '{{ test['path'].split('/')[-4:]|join('/') }}/{{ command }}' is empty"
+  fail:
+    msg: "Command output file is empty: {{ test['path'] }}/{{ command }}"
+  when: not lookup('file', test['path'] + '/' + command)

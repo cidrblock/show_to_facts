@@ -1,0 +1,57 @@
+interfaces:
+    details:
+        Ethernet1/1:
+            description: null
+            hardware: 100/1000/10000 Ethernet
+            ipv4_address: null
+            name: Ethernet1/1
+            state:
+                administrative: up
+                brief: up_up
+                operating: up
+        Ethernet1/2:
+            description: null
+            hardware: 100/1000/10000 Ethernet
+            ipv4_address: null
+            name: Ethernet1/2
+            state:
+                administrative: up
+                brief: up_down
+                operating: down
+        mgmt0:
+            description: null
+            hardware: Ethernet
+            ipv4_address:
+                address: 192.168.101.14
+                netmask: 255.255.255.0
+                network: 192.168.101.0
+                prefix_length: '24'
+            name: mgmt0
+            state:
+                administrative: up
+                brief: up_up
+                operating: up
+    summary:
+        state:
+            administrative:
+                down: 0
+                up: 3
+            down_down:
+                interfaces: []
+                total: 0
+            down_up:
+                interfaces: []
+                total: 0
+            operating:
+                down: 1
+                up: 2
+            up_down:
+                interfaces:
+                - Ethernet1/2
+                total: 1
+            up_up:
+                interfaces:
+                - mgmt0
+                - Ethernet1/1
+                total: 2
+        total: 3

@@ -1,0 +1,4 @@
+- show_to_facts:
+    resources: "{{ resources|default([]) }}"
+    update_facts: True
+    fact_key: "{{ fact_key }}"

@@ -1,0 +1,17 @@
+- name: "Build a list of tests for {{ resource_name }}/{{ network_os_name }}"
+  find:
+    paths: "{{ role_path }}/files/{{ resource_name }}/{{ network_os_name }}"
+    file_type: directory
+  register: tests
+  connection: local
+
+- name: "Fail if no tests exist for {{ resource_name }}/{{ network_os_name }}"
+  fail:
+    msg: "Missing tests for {{ resource_name }}/{{ network_os_name}}"
+  when: not tests['matched']
+
+- name: "Include the each_test file for each test in {{ resource_name }}/{{ network_os_name }}"
+  include: each_test.yml
+  with_items: "{{ tests['files'] }}"
+  loop_control:
+    loop_var: test

@@ -1,0 +1,7 @@
+- name: "Include the each_parser file for each parser in os: {{ network_os['key'] }}"
+  include: each_parser.yml
+  vars:
+    network_os_name: "{{ network_os['key'] }}"
+  with_list: "{{ network_os['value'] }}"
+  loop_control:
+    loop_var: commands

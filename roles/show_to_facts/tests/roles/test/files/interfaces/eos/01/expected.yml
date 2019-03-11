@@ -1,0 +1,47 @@
+interfaces:
+    details:
+        Ethernet1:
+            description: null
+            hardware: Ethernet
+            ipv4_address: null
+            name: Ethernet1
+            state:
+                administrative: up
+                brief: up_up
+                operating: up
+        Management1:
+            description: null
+            hardware: Ethernet
+            ipv4_address:
+                address: 192.168.101.10
+                netmask: 255.255.255.0
+                network: 192.168.101.0
+                prefix_length: '24'
+            name: Management1
+            state:
+                administrative: up
+                brief: up_up
+                operating: up
+    summary:
+        state:
+            administrative:
+                down: 0
+                up: 2
+            down_down:
+                interfaces: []
+                total: 0
+            down_up:
+                interfaces: []
+                total: 0
+            operating:
+                down: 0
+                up: 2
+            up_down:
+                interfaces: []
+                total: 0
+            up_up:
+                interfaces:
+                - Ethernet1
+                - Management1
+                total: 2
+        total: 2
